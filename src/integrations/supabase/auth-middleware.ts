@@ -37,6 +37,7 @@ export const requireSupabaseAuth = createMiddleware({ type: "function" }).server
 
     const token = authHeader.replace("Bearer ", "");
     if (!token) {
+      console.error("[auth-middleware] No token provided in header");
       throw new Error("Unauthorized: No token provided");
     }
 
@@ -54,6 +55,12 @@ export const requireSupabaseAuth = createMiddleware({ type: "function" }).server
     });
 
     const { data, error } = await supabase.auth.getClaims(token);
+    if (error) {
+      console.error("[auth-middleware] getClaims error:", error.message, error);
+    }
+    if (!data?.claims) {
+      console.error("[auth-middleware] getClaims returned no claims. data:", JSON.stringify(data));
+    }
     if (error || !data?.claims) {
       throw new Error("Unauthorized: Invalid token");
     }

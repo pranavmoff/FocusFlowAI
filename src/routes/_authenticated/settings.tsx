@@ -34,11 +34,11 @@ function ProfilePage() {
   const getFn = useServerFn(getMyProfile);
   const me = useQuery({ queryKey: ["my-profile"], queryFn: () => getFn({}) });
 
-  if (me.isLoading) {
-    return <p className="text-muted-foreground">Loading your profile…</p>;
+  if (me.error) {
+    return <p className="text-destructive">Couldn't load your profile. {me.error.message}</p>;
   }
-  if (me.error || !me.data) {
-    return <p className="text-destructive">Couldn't load your profile. Please sign in again.</p>;
+  if (me.isPending || !me.data) {
+    return <p className="text-muted-foreground">Loading your profile…</p>;
   }
 
   const fullName = me.data.profile?.full_name?.trim() || "Not set yet";
