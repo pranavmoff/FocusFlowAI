@@ -41,7 +41,8 @@ function Dashboard() {
   const fetchDash = useServerFn(getDashboardData);
   const dash = useQuery({ queryKey: ["dashboard"], queryFn: () => fetchDash({}) });
 
-  if (dash.error) return <p className="text-destructive">Couldn't load dashboard: {dash.error.message}</p>;
+  if (dash.error)
+    return <p className="text-destructive">Couldn't load dashboard: {dash.error.message}</p>;
   if (dash.isPending || !dash.data) return <Skeleton />;
   const d = dash.data;
   const m = d.metrics;

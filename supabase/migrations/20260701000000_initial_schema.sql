@@ -1,23 +1,18 @@
 -- FocusFlow AI — initial schema for a fresh Supabase project
 --
 -- This is a clean, consolidated migration representing the application's
--- current database schema: tables, row-level security policies, functions,
--- triggers, and grants. It replaces a 14-file migration history that
--- included several now-superseded iterations (an early social/friends
--- feature that was added and later removed, and a mid-history schema
--- reset) — none of which apply to a brand-new database, since a fresh
--- project only needs the final, current state.
---
--- Apply this once, in order, against a brand-new Supabase project (see
--- SUPABASE_SETUP.md). It is safe to run top-to-bottom in the Supabase SQL
--- Editor, or via `supabase db push` with the Supabase CLI.
---
--- Verified by actually applying this file to a fresh local PostgreSQL 16
--- database (with a minimal stub of auth.users / anon / authenticated /
--- service_role / auth.uid()) end to end with no errors, then functionally
--- calling compute_focusflow_score(), current_streak(), and the
--- encrypt_note()/decrypt_note() round-trip against real inserted rows.
+-- current database schema. Wrapped in a DO block to prevent errors if run
+-- against an existing database (e.g. Supabase Preview shadow DB).
 
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+DO $wrapper$
+BEGIN
+  IF EXISTS (SELECT 1 FROM pg_type WHERE typname = 'activity_category') THEN
+    RETURN;
+  END IF;
+
+  EXECUTE $script$
 
 CREATE TYPE public.activity_category AS ENUM ('learning','work','fitness','wellness','entertainment','personal','social','sleep','other');
 
@@ -185,8 +180,6 @@ GRANT ALL ON public.life_stories TO service_role;
 ALTER TABLE public.life_stories ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "own stories" ON public.life_stories FOR ALL TO authenticated
   USING (auth.uid() = user_id) WITH CHECK (auth.uid() = user_id);
-
-CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 CREATE TABLE public.habit_catalog (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -430,4 +423,7 @@ GRANT ALL    ON public.activity_dataset TO service_role;
 
 GRANT SELECT, INSERT ON public.activity_knowledge_base TO authenticated;
 GRANT ALL            ON public.activity_knowledge_base TO service_role;
+
+  $script$;
+END $wrapper$;
 
