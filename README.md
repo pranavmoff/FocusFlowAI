@@ -2,7 +2,7 @@
 
 FocusFlow AI is a personal productivity workspace designed to bring your tasks, goals, habits, reflection, and AI-powered guidance into a single, cohesive experience.
 
-URL : https://focus-flow-ai-focusflow-70-main.vercel.app/
+URL : https://focus-flow-ai-main.vercel.app/
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
