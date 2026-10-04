@@ -9,6 +9,7 @@ node_modules/
 .env.production
 .env.production.local
 .env.*.local
+supabase/.temp/
 
 # Build output
 dist/
