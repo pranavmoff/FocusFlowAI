@@ -262,9 +262,7 @@ function AuthRecoveryPage() {
                     minLength={8}
                     className="w-full rounded-xl border border-border bg-surface/60 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-ring"
                   />
-                  {matchError && (
-                    <p className="mt-1.5 text-xs text-destructive">{matchError}</p>
-                  )}
+                  {matchError && <p className="mt-1.5 text-xs text-destructive">{matchError}</p>}
                 </div>
 
                 {!passwordError && !matchError && (
@@ -295,5 +293,3 @@ function AuthRecoveryPage() {
     </div>
   );
 }
-
-

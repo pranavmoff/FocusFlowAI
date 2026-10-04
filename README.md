@@ -1,6 +1,6 @@
 # FocusFlow AI
 
-FocusFlow AI is a personal productivity workspace designed to bring your tasks, goals, habits, reflection, and AI-powered guidance into a single, cohesive experience. 
+FocusFlow AI is a personal productivity workspace designed to bring your tasks, goals, habits, reflection, and AI-powered guidance into a single, cohesive experience.
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
@@ -11,9 +11,10 @@ Productivity often becomes fragmented across multiple apps—a to-do list here, 
 
 ## Why FocusFlow?
 
-The core idea is simple: **understand what needs your attention without feeling overwhelmed.** 
+The core idea is simple: **understand what needs your attention without feeling overwhelmed.**
 
 FocusFlow helps you:
+
 - Organize your day-to-day tasks.
 - Track long-term goals and tie them to actionable steps.
 - Build and maintain positive habits.
@@ -36,30 +37,37 @@ FocusFlow helps you:
 ## Product Walkthrough
 
 ### 📊 Dashboard
+
 The heart of FocusFlow AI. See a summary of your day, quick actions, and your most pressing tasks.
 ![Dashboard](docs/screenshots/dashboard.png)
 
 ### ✅ Tasks
+
 A dedicated space to organize everything you need to do.
 ![Tasks](docs/screenshots/tasks.png)
 
 ### 🎯 Goals
+
 Track the bigger picture. Connect daily actions to long-term objectives.
 ![Goals](docs/screenshots/goals.png)
 
 ### 🔁 Habits
+
 Build consistency with a clear daily habit tracker.
 ![Habits](docs/screenshots/habits.png)
 
 ### 🤖 AI Coach
+
 Your personal productivity mentor, ready to help you plan, prioritize, or brainstorm.
 ![AI Coach](docs/screenshots/ai-coach.png)
 
 ### 📈 Reports & Insights
+
 Reflect on your journey with detailed analytics and timelines.
 ![Reports](docs/screenshots/reports.png)
 
 ### 🔐 Authentication
+
 A complete, secure authentication flow including sign in, sign up, and password resets.
 ![Sign In](docs/screenshots/sign-in.png)
 ![Forgot Password](docs/screenshots/forgot-password.png)
@@ -77,15 +85,15 @@ A complete, secure authentication flow including sign in, sign up, and password 
 
 ## Tech Stack
 
-| Technology | Purpose |
-| :--- | :--- |
-| **React** | Frontend UI Library |
-| **TypeScript** | Type safety and reliable code |
-| **Vite** | Lightning-fast development server and bundler |
-| **Supabase** | Backend-as-a-Service (Database, Authentication) |
-| **Tailwind CSS** | Utility-first styling and responsive design |
-| **TanStack Router** | Type-safe, powerful routing |
-| **Gemini API** | Generative AI integration for the AI Coach |
+| Technology          | Purpose                                         |
+| :------------------ | :---------------------------------------------- |
+| **React**           | Frontend UI Library                             |
+| **TypeScript**      | Type safety and reliable code                   |
+| **Vite**            | Lightning-fast development server and bundler   |
+| **Supabase**        | Backend-as-a-Service (Database, Authentication) |
+| **Tailwind CSS**    | Utility-first styling and responsive design     |
+| **TanStack Router** | Type-safe, powerful routing                     |
+| **Gemini API**      | Generative AI integration for the AI Coach      |
 
 ## Project Structure
 
@@ -109,23 +117,27 @@ FocusFlowAI/
 To run FocusFlow AI locally:
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/pranavmoff/FocusFlowAI.git
    cd FocusFlowAI
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Configure environment variables**
    Copy `.env.example` to `.env` (or `.env.local`) and fill in your Supabase credentials:
+
    ```bash
    cp .env.example .env
    ```
 
 4. **Start the development server**
+
    ```bash
    npm run dev
    ```
@@ -146,11 +158,12 @@ VITE_SITE_URL=http://localhost:8081
 GEMINI_API_KEY=your-gemini-api-key
 ```
 
-*Note: You can get a free Gemini API key from Google AI Studio. The Supabase credentials are found in your Supabase project settings.*
+_Note: You can get a free Gemini API key from Google AI Studio. The Supabase credentials are found in your Supabase project settings._
 
 ## Authentication Flow
 
 FocusFlow AI uses Supabase for a complete, secure authentication system:
+
 - **Sign Up**: Users can create an account using an email address and a strong password.
 - **Email Verification**: (Optional depending on Supabase configuration) Account confirmation via email.
 - **Sign In**: Standard email/password login.
@@ -165,6 +178,7 @@ FocusFlow AI uses Supabase for a complete, secure authentication system:
 ## 🚀 What's Next?
 
 Future improvements could include:
+
 - **Calendar Integrations**: Syncing tasks directly with Google or Outlook calendars.
 - **Mobile App**: Wrapping the responsive web app in a progressive web app (PWA) or React Native for native mobile experiences.
 - **Advanced AI Agents**: Expanding the AI Coach to proactively suggest schedule adjustments based on current progress.

@@ -15,6 +15,7 @@ dist/
 build/
 .output/
 .vercel/
+.wrangler/
 
 # Logs
 npm-debug.log*

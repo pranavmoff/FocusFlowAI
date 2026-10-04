@@ -12,7 +12,10 @@ export function getSiteUrl(): string {
     }
     return window.location.origin.replace(/\/$/, "");
   }
-  return (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") || "http://localhost:8081";
+  return (
+    (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") ||
+    "http://localhost:8081"
+  );
 }
 
 export const SITE_URL: string = getSiteUrl();
@@ -35,4 +38,3 @@ export const AUTH_SIGNUP_CONFIRM_URL = getAuthSignupConfirmUrl();
 
 // Kept for backward compatibility: a direct code/access_token callback fallback
 export const PASSWORD_RESET_URL = `${getSiteUrl()}/auth/callback?type=recovery`;
-

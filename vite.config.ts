@@ -15,6 +15,15 @@ import path from "node:path";
 const nitroPreset =
   process.env.NITRO_PRESET || (process.env.VERCEL ? "vercel" : "cloudflare-module");
 
+// Automatically use Vercel's production URL for the site URL if not explicitly set
+if (!process.env.VITE_SITE_URL) {
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    process.env.VITE_SITE_URL = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  } else if (process.env.VERCEL_URL) {
+    process.env.VITE_SITE_URL = `https://${process.env.VERCEL_URL}`;
+  }
+}
+
 export default defineConfig({
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },

@@ -47,9 +47,10 @@ export function useEmailLinkConfirmation(expectedType: OtpLinkType) {
         const decoded = decodeURIComponent(errorDesc).replace(/\+/g, " ");
         setState({
           status: "error",
-          message: decoded.includes("expired") || decoded.includes("invalid")
-            ? "This link is invalid or has expired. Please request a new reset link."
-            : decoded,
+          message:
+            decoded.includes("expired") || decoded.includes("invalid")
+              ? "This link is invalid or has expired. Please request a new reset link."
+              : decoded,
         });
         return;
       }
@@ -149,4 +150,3 @@ export function useEmailLinkConfirmation(expectedType: OtpLinkType) {
 
   return { state, confirm };
 }
-

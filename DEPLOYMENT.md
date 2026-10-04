@@ -4,17 +4,17 @@ Complete `SUPABASE_SETUP.md` first (or at least steps 1–3, creating the projec
 
 ## 1. Environment variables (required list)
 
-| Variable | Required | Where it runs | Notes |
-| --- | --- | --- | --- |
-| `SUPABASE_URL` | Yes | Server | From Supabase Project Settings → API |
-| `SUPABASE_PUBLISHABLE_KEY` | Yes | Server | `anon` `public` key |
-| `SUPABASE_SERVICE_ROLE_KEY` | Yes | Server (secret) | `service_role` key — never expose to the client |
-| `VITE_SUPABASE_URL` | Yes | Browser (baked in at build) | Same value as `SUPABASE_URL` |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` | Yes | Browser (baked in at build) | Same value as `SUPABASE_PUBLISHABLE_KEY` |
-| `VITE_SUPABASE_PROJECT_ID` | Yes | Browser (baked in at build) | Your project ref |
-| `VITE_SITE_URL` | Yes | Browser (baked in at build) | Must exactly match Supabase Auth's Site URL |
-| `GEMINI_API_KEY` | Yes | Server | Free key from https://aistudio.google.com/apikey |
-| `GEMINI_MODEL` | No | Server | Optional override, defaults to `gemini-2.5-flash` |
+| Variable                        | Required | Where it runs               | Notes                                             |
+| ------------------------------- | -------- | --------------------------- | ------------------------------------------------- |
+| `SUPABASE_URL`                  | Yes      | Server                      | From Supabase Project Settings → API              |
+| `SUPABASE_PUBLISHABLE_KEY`      | Yes      | Server                      | `anon` `public` key                               |
+| `SUPABASE_SERVICE_ROLE_KEY`     | Yes      | Server (secret)             | `service_role` key — never expose to the client   |
+| `VITE_SUPABASE_URL`             | Yes      | Browser (baked in at build) | Same value as `SUPABASE_URL`                      |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | Yes      | Browser (baked in at build) | Same value as `SUPABASE_PUBLISHABLE_KEY`          |
+| `VITE_SUPABASE_PROJECT_ID`      | Yes      | Browser (baked in at build) | Your project ref                                  |
+| `VITE_SITE_URL`                 | Yes      | Browser (baked in at build) | Must exactly match Supabase Auth's Site URL       |
+| `GEMINI_API_KEY`                | Yes      | Server                      | Free key from https://aistudio.google.com/apikey  |
+| `GEMINI_MODEL`                  | No       | Server                      | Optional override, defaults to `gemini-2.5-flash` |
 
 No legacy platform or third-party proxy variable is required — this project talks directly to Supabase and Google's Gemini API.
 
