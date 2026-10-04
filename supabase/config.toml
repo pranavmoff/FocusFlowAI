@@ -1,0 +1,6 @@
+# Supabase CLI project config.
+# After creating your new Supabase project (see SUPABASE_SETUP.md), replace
+# the placeholder below with your project's actual ref (Project Settings →
+# General → Reference ID), then run `supabase link --project-ref <ref>` to
+# connect the CLI to it before running `supabase db push`.
+project_id = "your-new-project-ref"
