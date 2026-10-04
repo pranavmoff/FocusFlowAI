@@ -2,6 +2,8 @@
 
 FocusFlow AI is a personal productivity workspace designed to bring your tasks, goals, habits, reflection, and AI-powered guidance into a single, cohesive experience.
 
+URL : https://focus-flow-ai-focusflow-70-main.vercel.app/
+
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
@@ -110,52 +112,6 @@ FocusFlowAI/
 ├── public/               # Static assets
 ├── package.json          # Project dependencies and scripts
 └── README.md             # This file
-```
-
-## Getting Started
-
-To run FocusFlow AI locally:
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/pranavmoff/FocusFlowAI.git
-   cd FocusFlowAI
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment variables**
-   Copy `.env.example` to `.env` (or `.env.local`) and fill in your Supabase credentials:
-
-   ```bash
-   cp .env.example .env
-   ```
-
-4. **Start the development server**
-
-   ```bash
-   npm run dev
-   ```
-
-5. **Build for production**
-   ```bash
-   npm run build
-   ```
-
-## Environment Variables
-
-The project requires the following environment variables to function correctly. A `.env.example` file is provided in the repository.
-
-```
-VITE_SUPABASE_URL=your-supabase-project-url
-VITE_SUPABASE_PUBLISHABLE_KEY=your-supabase-anon-key
-VITE_SITE_URL=http://localhost:8081
-GEMINI_API_KEY=your-gemini-api-key
 ```
 
 _Note: You can get a free Gemini API key from Google AI Studio. The Supabase credentials are found in your Supabase project settings._
